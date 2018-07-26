@@ -1,4 +1,3 @@
-# TODO: why tests fail with python 2.7?
 #
 # Conditional build:
 %bcond_without	tests	# make check
@@ -12,8 +11,8 @@ Version:	0.5.0
 Release:	3
 License:	Apache v2.0 or BSD
 Group:		Libraries/Python
-#Source0Download: https://pypi.python.org/simple/testscenarios/
-Source0:	https://pypi.python.org/packages/source/t/testscenarios/testscenarios-%{version}.tar.gz
+#Source0Download: https://pypi.org/simple/testscenarios/
+Source0:	https://files.pythonhosted.org/packages/source/t/testscenarios/testscenarios-%{version}.tar.gz
 # Source0-md5:	859073d9e7b049aee2e6704c51f6001a
 URL:		https://launchpad.net/testscenarios
 BuildRequires:	rpm-pythonprov
@@ -81,14 +80,19 @@ pozwala na łatwiejsze testowanie w różnych sytuacjach).
 %if %{with python2}
 %py_build
 
-# tests fail with python 2.x - too old unittest?
-#%{?with_tests:%{__make} check PYTHON=%{__python}}
+%if %{with tests}
+%{__make} check \
+	PYTHON=%{__python}
+%endif
 %endif
 
 %if %{with python3}
 %py3_build
 
-%{?with_tests:%{__make} check PYTHON=%{__python3}}
+%if %{with tests}
+%{__make} check \
+	PYTHON=%{__python3}
+%endif
 %endif
 
 %install
