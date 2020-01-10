@@ -30,8 +30,6 @@ BuildRequires:	python3-setuptools
 BuildRequires:	python3-testtools
 %endif
 Requires:	python-modules >= 1:2.6
-Requires:	python-pbr >= 0.11
-Requires:	python-testtools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,8 +53,6 @@ Summary:	Testscenarios - pyunit extension for dependency injection
 Summary(pl.UTF-8):	Testscenarios - rozszerzenie pyunit do wstrzykiwania zależności
 Group:		Libraries/Python
 Requires:	python3-modules >= 1:3.2
-Requires:	python3-pbr >= 0.11
-Requires:	python3-testtools
 
 %description -n python3-testscenarios
 testscenarios provides clean dependency injection for python unittest
