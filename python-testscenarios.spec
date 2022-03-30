@@ -8,7 +8,7 @@ Summary:	Testscenarios - pyunit extension for dependency injection
 Summary(pl.UTF-8):	Testscenarios - rozszerzenie pyunit do wstrzykiwania zależności
 Name:		python-testscenarios
 Version:	0.5.0
-Release:	6
+Release:	7
 License:	Apache v2.0 or BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/testscenarios/
